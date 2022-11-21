@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const aws = require('aws-sdk');
+/* const aws = require('aws-sdk');
 
 
 aws.config.update({
@@ -17,14 +17,14 @@ aws.config.update({
     region: process.env.AWS_REGION // region of your bucket
 });
 
-const s3Config = new aws.S3();
+const s3Config = new aws.S3(); */
 
 
 export default {
 	PORT: process.env.PORT || 5003,
 	MONGODB_URL: process.env.MONGODB_URL,
-	JWT_SECRET: process.env.JWT_SECRET,
-	aws,
-    s3Config,
-    s3bucket:process.env.S3_BUCKET
+	JWT_SECRET: process.env.JWT_SECRET
+	// aws,
+    // s3Config,
+    // s3bucket:process.env.S3_BUCKET
 };
