@@ -28,7 +28,7 @@ const app = express();
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage })
-const {aws,s3} = require('./config');
+// const {aws,s3} = require('./config');
 
 /*
  * Configure the AWS region of the target bucket.
@@ -39,7 +39,7 @@ const {aws,s3} = require('./config');
 /*
  * Load the S3 information from the environment variables.
  */
-const {S3_BUCKET} = "niyastore";
+// const {S3_BUCKET} = "niyastore";
 
 app.use(cors());
 app.use(bodyParser.json());
