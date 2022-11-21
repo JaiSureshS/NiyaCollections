@@ -58,7 +58,7 @@ const multerUpload = multer({
 import express from 'express'
 
 import multer from 'multer'
-import sharp from 'sharp'
+// import sharp from 'sharp'
 
 import { uploadFile } from './s3'
 
@@ -76,11 +76,11 @@ uploadRouter.post('/', upload.single('image'), async (req, res) => {
   // const {caption} = req.body
   const imageName = `${req.file.originalname}${Date.now()}`
 
-  const fileBuffer = await sharp(file.buffer)
+  /* const fileBuffer = await sharp(file.buffer)
     .resize({ height: 1920, width: 1080, fit: "contain" })
-    .toBuffer()
+    .toBuffer() */
 
-  await uploadFile(fileBuffer, imageName, file.mimetype)
+  await uploadFile(file.buffer, imageName, file.mimetype)
 
   
   res.status(201).send({ image: `${imageName}` });
